@@ -22,6 +22,21 @@
     <meta property="twitter:description" content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development.">
     <meta property="twitter:image" content="https://jakubsladek.cz/src/images/js.jpg">
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jakub Sládek",
+      "url": "https://jakubsladek.cz",
+      "image": "https://jakubsladek.cz/src/images/js.jpg",
+      "sameAs": [],
+      "jobTitle": "Web & App Developer",
+      "description": "Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development.",
+      "knowsAbout": ["Laravel", "Next.js", "React.js", "PHP", "JavaScript", "TypeScript", "Web Development", "App Development"]
+    }
+    </script>
+    
     <title>Jakub Sládek - Web & App Developer | Full Stack Developer</title>
     <link rel="stylesheet" href="/src/style.css">
     <link rel="canonical" href="https://jakubsladek.cz/">
@@ -66,7 +81,7 @@
             </div>
             <div class="relative text-center z-10 max-w-4xl mx-auto py-16 sm:py-20">
                 <div class="mx-auto w-32 h-32 sm:w-40 sm:h-40 mb-8 animate-fade-in">
-                    <img src="/src/images/js.jpg" alt="Jakub Sládek" class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800">
+                    <img src="/src/images/js.jpg" alt="Jakub Sládek" class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800" loading="lazy">
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">
                     Jakub Sládek
@@ -163,58 +178,19 @@
         <section id="projects" class="py-12 sm:py-20 px-4 md:px-8 bg-gray-50 dark:bg-gray-800">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 max-w-7xl mx-auto">
-                <div class="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700">
-                        <div class="p-4 sm:p-6 flex items-center justify-center text-3xl sm:text-4xl text-gray-400 dark:text-gray-500">🚀</div>
-                    </div>
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Project One</h3>
-                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">A brief description of the project and its key features.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">React</span>
-                            <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">Node.js</span>
-                        </div>
-                        <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
-                            View Project <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700">
-                        <div class="p-6 flex items-center justify-center text-4xl text-gray-400 dark:text-gray-500">💻</div>
-                    </div>
+                <article class="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Project Two</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Another amazing project showcasing different technologies.</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Personal Portfolio Website</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Modern, responsive portfolio website built with Vite and TailwindCSS, featuring dark mode support and optimized performance.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full">Vue.js</span>
-                            <span class="px-3 py-1 text-sm bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full">Python</span>
+                            <span class="px-3 py-1 text-sm bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 rounded-full">Vite</span>
+                            <span class="px-3 py-1 text-sm bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-full">TailwindCSS</span>
                         </div>
-                        <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
-                            View Project <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <a href="https://github.com/excap3r/jakubsladek.cz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300" aria-label="View Portfolio Website project">
+                            View Project <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="group bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700">
-                        <div class="p-6 flex items-center justify-center text-4xl text-gray-400 dark:text-gray-500">🎨</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Project Three</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">A creative project pushing the boundaries of web design.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-sm bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 rounded-full">Next.js</span>
-                            <span class="px-3 py-1 text-sm bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-full">Tailwind</span>
-                        </div>
-                        <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
-                            View Project <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
 
