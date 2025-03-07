@@ -1,50 +1,51 @@
-import './style.css';
+import './styles/main.css';
+import './styles/stars.css';
+import { initStarField } from './effects/starfield';
+import ThemeManager from './modules/themeManager';
+import SmoothScroll from './modules/smoothScroll';
+import AnimationsManager from './modules/animations';
 
-// Theme toggle functionality
-const themeToggle = document.getElementById('themeToggle');
-const lightIcon = themeToggle.querySelector('.theme-toggle-light');
-const darkIcon = themeToggle.querySelector('.theme-toggle-dark');
+// Initialize star field in home section
+const homeSection = document.getElementById('home');
+let starField = null;
 
-// Check for saved theme preference, otherwise use system preference
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-    lightIcon.classList.add('hidden');
-    darkIcon.classList.remove('hidden');
-} else {
-    document.documentElement.classList.remove('dark');
-    darkIcon.classList.add('hidden');
-    lightIcon.classList.remove('hidden');
+function updateStarField() {
+    const starContainer = homeSection.querySelector('.absolute.inset-0');
+    // Remove existing starfield if any
+    if (starField) {
+        starField.remove();
+        starField = null;
+    }
+    // Create new starfield if in dark mode
+    const newStarField = initStarField();
+    if (newStarField) {
+        starField = newStarField;
+        starContainer.appendChild(starField);
+    }
 }
 
-// Toggle theme
-themeToggle.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.theme = isDark ? 'dark' : 'light';
-    
-    // Toggle icons
-    lightIcon.classList.toggle('hidden');
-    darkIcon.classList.toggle('hidden');
-    
-    // Add smooth transition effect
-    document.documentElement.style.transition = 'background-color 0.3s ease';
+// Initialize all modules
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme management
+    new ThemeManager();
+
+    // Initialize smooth scroll
+    new SmoothScroll();
+
+    // Initialize animations and interactive elements
+    new AnimationsManager();
+
+    // Initial starfield setup
+    if (homeSection) {
+        updateStarField();
+        // Listen for theme changes
+        document.addEventListener('themeChanged', updateStarField);
+    }
 });
 
-// Smooth scroll for navigation links with offset for fixed header
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const headerHeight = document.querySelector('nav').offsetHeight;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // Added 20px extra padding
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
+// Add page transition effect
+window.addEventListener('load', () => {
+    console.log('Window load event triggered');
+    document.body.style.opacity = '1';
+    document.body.classList.add('page-transition', 'loaded');
 });

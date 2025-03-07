@@ -1,0 +1,8 @@
+/* Import base styles */
+@import './base.css';
+
+/* Import component styles */
+@import './components.css';
+
+/* Import animation styles */
+@import './animations.css';

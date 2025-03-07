@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: -0.025em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Light/dark mode background colors */
+.dark #home {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#contact {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.dark #contact {
+    background-color: #000000;
+    color: #FFFFFF;
+}

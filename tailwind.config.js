@@ -7,6 +7,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        'pure-black': '#000000',
+        'pure-white': '#FFFFFF',
+      },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',
         'fade-in-delay': 'fadeIn 0.5s ease-in 0.2s',
