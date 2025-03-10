@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development. Portfolio showcasing innovative web applications and e-commerce solutions.">
-    <meta name="keywords" content="Web Developer, App Developer, Laravel, Next.js, React.js, PHP, Full Stack Developer, JavaScript, TypeScript">
+
+    <!-- Primary Meta Tags -->
+    <title>Jakub Sládek - Web & App Developer | Full Stack Developer</title>
+    <meta name="description"
+        content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development. Portfolio showcasing innovative web applications and e-commerce solutions.">
+    <meta name="keywords"
+        content="Web Developer, App Developer, Laravel, Next.js, React.js, PHP, Full Stack Developer, JavaScript, TypeScript">
     <meta name="author" content="Jakub Sládek">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
+    <link rel="canonical" href="https://jakubsladek.cz/">
+
+    <!-- Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jakubsladek.cz/">
     <meta property="og:title" content="Jakub Sládek - Web & App Developer">
-    <meta property="og:description" content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development.">
+    <meta property="og:description"
+        content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development.">
     <meta property="og:image" content="https://jakubsladek.cz/src/images/js.jpg">
-    
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jakubsladek.cz/">
     <meta property="twitter:title" content="Jakub Sládek - Web & App Developer">
-    <meta property="twitter:description" content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development.">
+    <meta property="twitter:description"
+        content="Experienced Web & App Developer specializing in Laravel, Next.js, React.js, and PHP development.">
     <meta property="twitter:image" content="https://jakubsladek.cz/src/images/js.jpg">
-    
-    <!-- JSON-LD Structured Data -->
+
+    <!-- Assets -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,16 +48,13 @@
       "knowsAbout": ["Laravel", "Next.js", "React.js", "PHP", "JavaScript", "TypeScript", "Web Development", "App Development"]
     }
     </script>
-    
-    <title>Jakub Sládek - Web & App Developer | Full Stack Developer</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="canonical" href="https://jakubsladek.cz/">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
+
 <body class="bg-pure-white dark:bg-pure-black transition-colors duration-300">
     <div class="min-h-screen">
         <!-- Navigation Bar -->
-        <nav class="fixed w-full z-50 bg-pure-white/80 dark:bg-pure-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+        <nav
+            class="fixed w-full z-50 bg-pure-white/80 dark:bg-pure-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
             <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-14 sm:h-16">
                     <div class="flex-shrink-0">
@@ -53,19 +62,30 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-center space-x-4">
-                            <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Home</a>
-                            <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">About</a>
-                            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Projects</a>
-                            <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Contact</a>
+                            <a href="#home"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Home</a>
+                            <a href="#about"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">About</a>
+                            <a href="#projects"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Projects</a>
+                            <a href="#contact"
+                                class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Contact</a>
                         </div>
                     </div>
                     <!-- Theme Toggle Button -->
-                    <button id="themeToggle" class="p-1.5 sm:p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 shadow-lg ml-4">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800 dark:text-yellow-300 theme-toggle-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    <button id="themeToggle"
+                        class="p-1.5 sm:p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 shadow-lg ml-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800 dark:text-yellow-300 theme-toggle-light"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
                         </svg>
-                        <svg class="hidden w-5 h-5 sm:w-6 sm:h-6 text-gray-800 dark:text-gray-200 theme-toggle-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        <svg class="hidden w-5 h-5 sm:w-6 sm:h-6 text-gray-800 dark:text-gray-200 theme-toggle-dark"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
                         </svg>
                     </button>
                 </div>
@@ -73,25 +93,34 @@
         </nav>
 
         <!-- Hero Section -->
-        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-pure-white dark:bg-pure-black px-4 sm:px-6 lg:px-8">
+        <section id="home"
+            class="relative min-h-screen flex items-center justify-center overflow-hidden bg-pure-white dark:bg-pure-black px-4 sm:px-6 lg:px-8">
             <div class="absolute inset-0 overflow-hidden">
             </div>
             <div class="relative text-center z-10 max-w-4xl mx-auto py-16 sm:py-20">
                 <div class="mx-auto w-32 h-32 sm:w-40 sm:h-40 mb-8 animate-fade-in">
-                    <img src="./src/images/js-light.webp" alt="Jakub Sládek" class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800 profile-image dark:hidden" loading="lazy">
-                    <img src="./src/images/js.webp" alt="Jakub Sládek" class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800 profile-image hidden dark:block" loading="lazy">
+                    <img src="./src/images/js-light.webp" alt="Jakub Sládek"
+                        class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800 profile-image dark:hidden"
+                        loading="lazy">
+                    <img src="./src/images/js.webp" alt="Jakub Sládek"
+                        class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800 profile-image hidden dark:block"
+                        loading="lazy">
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">
+                <h1
+                    class="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">
                     Jakub Sládek
                 </h1>
                 <p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 animate-fade-in-delay">
                     Web & App Developer
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-delay-2">
-                    <a href="#projects" class="px-6 py-2.5 text-base bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
+                <div
+                    class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-delay-2">
+                    <a href="#projects"
+                        class="px-6 py-2.5 text-base bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300">
                         View My Work
                     </a>
-                    <a href="#contact" class="px-6 py-2.5 text-base bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
+                    <a href="#contact"
+                        class="px-6 py-2.5 text-base bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300">
                         Contact Me
                     </a>
                 </div>
@@ -101,11 +130,29 @@
         <!-- About Me Section -->
         <section id="about" class="py-12 sm:py-20 px-4 md:px-8 bg-pure-white dark:bg-pure-black">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">About Me</h2>
+                <h2
+                    class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">
+                    About Me</h2>
                 <div class="prose prose-lg dark:prose-invert max-w-4xl mx-auto text-gray-600 dark:text-gray-300">
-                    <p class="mb-6 typewriter-text" data-text="Hey there! I'm Jakub Sládek, a FullStack web wizard obsessed with crafting apps that look good and feel even better. WordPress? Sure. Custom Laravel or Nette vibes? You bet! I've coded at Webdevel and Naninails, and right now I'm deep in a hush-hush Laravel project with Lighthouse GraphQL – think locations and map calculations. No spoilers though, it's top secret for a reason!"></p>
-                    <p class="mb-6 typewriter-text" data-text="I live for clean code, cutting-edge tech, and a sprinkle of AI magic. Plus, I'm a biohacking geek who unwinds in nature – catch me running to reset."></p>
-                    <p class="text-lg font-medium text-gray-800 dark:text-gray-200 italic typewriter-text" data-text="Motto: 'Balance is in cycles.' I'm all about freedom and projects with soul."></p>
+                    <!-- Introduction paragraph with professional focus -->
+                    <p class="mb-6 typewriter-text"
+                        data-text="👋 Hey there! I'm Jakub Sládek, a <strong>FullStack Web Developer</strong> passionate about crafting intuitive and performant applications. With expertise in WordPress, Laravel, and Nette frameworks, I bring a versatile skill set to every project I undertake.">
+                    </p>
+
+                    <!-- Professional experience with more structured formatting -->
+                    <p class="mb-6 typewriter-text"
+                        data-text="🚀 My professional journey includes valuable experience at Webdevel and Naninails. Currently, I'm immersed in an exciting Laravel project utilizing Lighthouse GraphQL, focusing on location-based services and map calculations — a challenging endeavor that continues to expand my technical horizons.">
+                    </p>
+
+                    <!-- Personal interests with cleaner formatting -->
+                    <p class="mb-6 typewriter-text"
+                        data-text="✨ Beyond coding, I'm dedicated to clean architecture, emerging technologies, and thoughtful AI integration. I balance my technical pursuits with biohacking and outdoor activities, finding that nature runs provide the perfect counterpoint to screen time.">
+                    </p>
+
+                    <!-- Motto with enhanced styling -->
+                    <p class="text-lg font-medium text-gray-800 dark:text-gray-200 italic typewriter-text"
+                        data-text="💭 Motto: 'Balance is in cycles.' I value freedom and meaningful projects that make a difference.">
+                    </p>
                 </div>
             </div>
         </section>
@@ -113,104 +160,187 @@
         <!-- Experience Section -->
         <section id="experience" class="py-12 sm:py-20 px-4 md:px-8 bg-pure-white dark:bg-pure-black">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">Professional Experience</h2>
-                        
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
-                            <div class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-0">Independent Software Developer & Entrepreneur</h3>
-                                    <span class="text-sm text-gray-600 dark:text-gray-400">02/2025 - Present</span>
-                                </div>
-                                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">Developing innovative web applications and e-commerce platforms with a focus on SaaS solutions while offering freelance development services.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">Laravel</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full">Next.js</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">React.js</span>
-                                </div>
-                            </div>
-                            <div class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-0">PHP Developer at NaniNails</h3>
-                                    <span class="text-sm text-gray-600 dark:text-gray-400">09/2022 - 12/2024</span>
-                                </div>
-                                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">Led development of custom PHP libraries for shipping APIs, implemented security enhancements, and developed data-driven reporting solutions at Czechia's leading nail cosmetics company. Reduced backend response times by ~40% through GraphQL implementation.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full">PHP</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">GraphQL</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">MySQL</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">DigitalOcean</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full">Nette</span>
-                                </div>
-                            </div>
-                            <div class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-0">Web Developer at Webdevel</h3>
-                                    <span class="text-sm text-gray-600 dark:text-gray-400">06/2021 - 08/2022</span>
-                                </div>
-                                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">Specialized in developing custom WordPress themes and WooCommerce solutions. Improved site performance and implemented responsive designs for various e-commerce clients.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">WordPress</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full">WooCommerce</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">PHP</span>
-                                    <span class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">Laravel</span>
-                                </div>
-                            </div>
-                            </div>
+                <h2
+                    class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">
+                    Professional Experience</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
+                    <article
+                        class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-0">
+                                Independent Software Developer & Entrepreneur</h3>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">02/2025 - Present</span>
+                        </div>
+                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">Developing innovative web
+                            applications and e-commerce platforms with a focus on SaaS solutions while offering
+                            freelance development services.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">Laravel</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full">Next.js</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">React.js</span>
+                        </div>
+                    </article>
+                    <div
+                        class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-0">PHP
+                                Developer at NaniNails</h3>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">09/2022 - 12/2024</span>
+                        </div>
+                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">Led development of custom
+                            PHP libraries for shipping APIs, implemented security enhancements, and developed
+                            data-driven reporting solutions at Czechia's leading nail cosmetics company. Reduced backend
+                            response times by ~40% through GraphQL implementation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full">PHP</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">GraphQL</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">MySQL</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">DigitalOcean</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full">Nette</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2 sm:mb-0">Web
+                                Developer at Webdevel</h3>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">06/2021 - 08/2022</span>
+                        </div>
+                        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">Specialized in developing
+                            custom WordPress themes and WooCommerce solutions. Improved site performance and implemented
+                            responsive designs for various e-commerce clients.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">WordPress</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full">WooCommerce</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">PHP</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full">Laravel</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Skills Section -->
-                <section class="py-16 sm:py-24 bg-pure-white dark:bg-pure-black">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">Technical Skills</h2>
-                        <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">PHP</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Laravel</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Symfony Framework</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">JavaScript</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Next.js</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">React.js</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Vite</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Nette</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">GraphQL</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Node.js</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">TypeScript</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">API Development</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">MySQL</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Linux/Ubuntu</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">DigitalOcean</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Microsoft SQL Server</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Vector Databases</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">GraphQL</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">WordPress</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">WooCommerce</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">AI Integration</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Project Planning</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">ClickUp</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Python</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Selenium</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Unit Testing</span>
-                        <span class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Docker</span>
-                    </div>
+        <!-- Skills Section -->
+        <section class="py-16 sm:py-24 bg-pure-white dark:bg-pure-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2
+                    class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">
+                    Technical Skills</h2>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <!-- Frontend -->
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">React.js</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Next.js</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">JavaScript</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">TypeScript</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Vite</span>
+
+                    <!-- Backend -->
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">PHP</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Laravel</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Symfony
+                        Framework</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Node.js</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Nette</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">GraphQL</span>
+
+                    <!-- CMS & E-commerce -->
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">WordPress</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">WooCommerce</span>
+
+                    <!-- Infrastructure & DevOps -->
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Linux/Ubuntu</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">DigitalOcean</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Docker</span>
+
+                    <!-- Databases -->
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">MySQL</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Microsoft
+                        SQL Server</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Vector
+                        Databases</span>
+
+                    <!-- Other Skills -->
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">API
+                        Development</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">AI
+                        Integration</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Project
+                        Planning</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">ClickUp</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Unit
+                        Testing</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Python</span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full">Selenium</span>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="py-12 sm:py-20 px-4 md:px-8 bg-pure-white dark:bg-pure-black">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">Featured Projects</h2>
+            <h2
+                class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">
+                Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 max-w-7xl mx-auto">
-                <article class="group bg-pure-white dark:bg-pure-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <article
+                    class="group bg-pure-white dark:bg-pure-black rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Personal Portfolio Website</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Modern, responsive portfolio website built with Vite and TailwindCSS, featuring dark mode support and optimized performance.</p>
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            Personal Portfolio Website</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Modern, responsive portfolio website built with
+                            Vite and TailwindCSS, featuring dark mode support and optimized performance.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 text-sm bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 rounded-full">Vite</span>
-                            <span class="px-3 py-1 text-sm bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-full">TailwindCSS</span>
+                            <span
+                                class="px-3 py-1 text-sm bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 rounded-full">Vite</span>
+                            <span
+                                class="px-3 py-1 text-sm bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 rounded-full">TailwindCSS</span>
                         </div>
-                        <a href="https://github.com/excap3r/jakubsladek.cz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 dark:text-blue-400" aria-label="View Portfolio Website project">
-                            View Project <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <a href="https://github.com/excap3r/jakubsladek.cz" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center text-blue-600 dark:text-blue-400"
+                            aria-label="View Portfolio Website project">
+                            View Project <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
                         </a>
                     </div>
                 </article>
@@ -218,40 +348,54 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="relative py-16 sm:py-24 px-4 md:px-8 bg-pure-white dark:bg-pure-black">
+        <section id="contact" class="relative py-16 sm:py-24 bg-pure-white dark:bg-pure-black">
             <div class="relative z-10 max-w-4xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 tracking-tight">Let's Work Together</h2>
-                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">I'm always interested in hearing about new projects and opportunities. Whether you have a question, want to start a project, or simply want to connect, feel free to reach out!</p>
+                    <h2
+                        class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 tracking-tight">
+                        Let's Work Together</h2>
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">I'm
+                        always interested in hearing about new projects and opportunities. Whether you have a question,
+                        want to start a project, or simply want to connect, feel free to reach out!</p>
                 </div>
-                
+
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-12">
-                    <a href="mailto:contact@jakubsladek.cz" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
-                        <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    <a href="mailto:contact@jakubsladek.cz"
+                        class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
                         </svg>
                         contact@jakubsladek.cz
                     </a>
-                    <a href="https://www.linkedin.com/in/jakubsladek" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#0077b5] rounded-full hover:bg-[#006396] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
+                    <a href="https://www.linkedin.com/in/jakubsladek" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#0077b5] rounded-full hover:bg-[#006396] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                         LinkedIn
                     </a>
-                    <a href="https://github.com/excap3r" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
+                    <a href="https://github.com/excap3r" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                         GitHub
                     </a>
                 </div>
-                
+
                 <!-- Decorative elements -->
                 <div class="absolute top-0 right-0 -mt-4 -mr-4 hidden md:block">
-                    <div class="w-24 h-24 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-10 blur-xl"></div>
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-10 blur-xl">
+                    </div>
                 </div>
                 <div class="absolute bottom-0 left-0 -mb-4 -ml-4 hidden md:block">
-                    <div class="w-32 h-32 rounded-full bg-gradient-to-r from-pink-400 to-blue-500 opacity-10 blur-xl"></div>
+                    <div class="w-32 h-32 rounded-full bg-gradient-to-r from-pink-400 to-blue-500 opacity-10 blur-xl">
+                    </div>
                 </div>
             </div>
         </section>
@@ -266,4 +410,5 @@
 
     <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

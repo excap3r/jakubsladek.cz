@@ -2,11 +2,14 @@
 #contact {
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.8);
+    background: transparent;
     transition: all 0.3s ease;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Enhanced Contact Section Text Styles */
@@ -35,7 +38,7 @@
 }
 
 .dark #contact {
-    background-color: #000000;
+    background-color: transparent;
 }
 
 .dark #contact h2 {

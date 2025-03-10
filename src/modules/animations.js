@@ -35,13 +35,13 @@ class AnimationsManager {
         if (isMotto) {
             this.applyTypewriterEffect(element, text);
         } else {
-            element.textContent = text;
+            element.innerHTML = text;
             element.classList.add('typing');
         }
     }
 
     applyTypewriterEffect(element, text) {
-        element.textContent = '';
+        element.innerHTML = '';
         element.classList.add('typing');
         
         const cursor = document.createElement('span');
@@ -56,9 +56,12 @@ class AnimationsManager {
             if (charIndex < text.length) {
                 const currentText = text.substring(0, charIndex + 1);
                 element.innerHTML = '';
-                const textSpan = document.createElement('span');
-                textSpan.textContent = currentText;
-                element.appendChild(textSpan);
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = currentText;
+
+                while (tempDiv.firstChild) {
+                    element.appendChild(tempDiv.firstChild);
+                }
                 if (charIndex < text.length - 1) {
                     element.appendChild(cursor);
                 }
