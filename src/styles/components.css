@@ -50,21 +50,11 @@
 
 /* 3D Card Effect */
 .group {
-    transition: all 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.group:hover {
-    transform: rotateY(5deg) rotateX(5deg);
-}
-
-.group:hover h3 {
-    transform: translateZ(20px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .group h3, .group p, .group .flex, .group a {
-    transition: transform 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .group:hover p {
