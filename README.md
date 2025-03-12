@@ -27,7 +27,7 @@ Welcome to my corner of the web! This is the source code for my professional por
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/jakubsladek.cz.git
+git clone https://github.com/excap3r/jakubsladek.cz.git
 cd jakubsladek.cz
 ```
 
