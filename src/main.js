@@ -2,7 +2,6 @@ import './styles/main.css';
 import './styles/stars.css';
 import { initStarField } from './effects/starfield';
 import ThemeManager from './modules/themeManager';
-import SmoothScroll from './modules/smoothScroll';
 import AnimationsManager from './modules/animations';
 
 // Initialize star field in home section
@@ -49,9 +48,9 @@ function updateStarField() {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme management
     new ThemeManager();
-
-    // Initialize smooth scroll
-    new SmoothScroll();
+    
+    // Setup direct scroll handling for navigation links
+    setupDirectScrolling();
 
     // Initialize animations and interactive elements
     new AnimationsManager();
@@ -71,3 +70,35 @@ window.addEventListener('load', () => {
     // Use class toggling instead of direct DOM manipulation
     document.body.classList.add('page-transition', 'loaded');
 });
+
+// Simple function to handle direct scrolling to sections
+function setupDirectScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = anchor.getAttribute('href');
+            
+            // Handle case when targetId is just '#'
+            if (targetId === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+                return;
+            }
+            
+            const targetElement = document.querySelector(targetId);
+            if (!targetElement) return;
+            
+            const headerHeight = document.querySelector('nav')?.offsetHeight || 0;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - headerHeight - 16; // Extra space
+            
+            // Scroll directly to the position
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'instant'
+            });
+        });
+    });
+}
