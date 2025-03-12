@@ -83,11 +83,19 @@ class SmoothScroll {
             return;
         }
         
-        const headerHeight = headerElement.offsetHeight;
-        this.lenis.scrollTo(element, {
-            offset: -headerHeight - 20,
-            duration: 1.2
-        });
+        // Allow layout stabilization before scrolling
+        setTimeout(() => {
+            requestAnimationFrame(() => {
+                // Re-measure header height after layout stabilization
+                const currentHeaderHeight = headerElement.offsetHeight;
+                console.log('Scrolling to:', element.id, 'Header height:', currentHeaderHeight);
+                this.lenis.scrollTo(element, {
+                    offset: -currentHeaderHeight - 20,
+                    duration: 1.2,
+                    lock: true
+                });
+            });
+        }, 100);
     }
     
     // Cleanup method to prevent memory leaks and stop animation frames
