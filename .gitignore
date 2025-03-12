@@ -51,3 +51,7 @@ logs
 
 # Local Netlify folder
 .netlify
+
+# Development
+TASKLIST.md
+CHANGELOG.md
