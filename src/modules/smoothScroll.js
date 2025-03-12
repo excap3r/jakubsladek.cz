@@ -4,15 +4,15 @@ import Lenis from '@studio-freight/lenis';
 class SmoothScroll {
     constructor() {
         this.lenis = new Lenis({
-            duration: 1.2,
+            duration: 1.0,
             easing: (t) => 1 - Math.pow(1 - t, 5),
             direction: 'vertical',
             gestureDirection: 'vertical',
             smooth: true,
-            smoothTouch: true,
+            smoothTouch: false, // Disable smooth touch for better performance on mobile
             touchMultiplier: 1.5,
-            wheelMultiplier: 0.8,
-            lerp: 0.08
+            wheelMultiplier: 0.6, // Reduced multiplier for smoother scrolling
+            lerp: 0.05 // Lower lerp value for smoother interpolation
         });
 
         this.viewWorkClickCount = 0;
