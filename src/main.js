@@ -10,17 +10,38 @@ const homeSection = document.getElementById('home');
 let starField = null;
 
 function updateStarField() {
-    const starContainer = homeSection.querySelector('.absolute.inset-0');
-    // Remove existing starfield if any
-    if (starField) {
-        starField.remove();
-        starField = null;
+    // Error handling for DOM element selection
+    if (!homeSection) {
+        console.error('Home section not found');
+        return;
     }
-    // Create new starfield if in dark mode
-    const newStarField = initStarField();
-    if (newStarField) {
-        starField = newStarField;
-        starContainer.appendChild(starField);
+    
+    const starContainer = homeSection.querySelector('.absolute.inset-0');
+    if (!starContainer) {
+        console.error('Star container not found in home section');
+        return;
+    }
+    
+    // Toggle visibility instead of recreating elements
+    if (document.documentElement.classList.contains('dark')) {
+        // Create starfield if it doesn't exist yet
+        if (!starField) {
+            const newStarField = initStarField();
+            if (newStarField) {
+                starField = newStarField;
+                starContainer.appendChild(starField);
+            }
+        } else if (starField.parentNode !== starContainer) {
+            // Re-append if it exists but was removed
+            starContainer.appendChild(starField);
+        }
+        // Make sure it's visible
+        if (starField) {
+            starField.style.display = 'block';
+        }
+    } else if (starField) {
+        // Hide starfield in light mode instead of removing
+        starField.style.display = 'none';
     }
 }
 
@@ -40,12 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStarField();
         // Listen for theme changes
         document.addEventListener('themeChanged', updateStarField);
+    } else {
+        console.error('Home section not found, starfield initialization skipped');
     }
 });
 
 // Add page transition effect
 window.addEventListener('load', () => {
-    console.log('Window load event triggered');
-    document.body.style.opacity = '1';
+    // Use class toggling instead of direct DOM manipulation
     document.body.classList.add('page-transition', 'loaded');
 });

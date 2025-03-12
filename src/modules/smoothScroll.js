@@ -16,6 +16,8 @@ class SmoothScroll {
         });
 
         this.viewWorkClickCount = 0;
+        this.animationFrameId = null;
+        this.boundHandleAnchorClick = this.handleAnchorClick.bind(this);
         this.init();
     }
 
@@ -27,19 +29,20 @@ class SmoothScroll {
     setupRAF() {
         const raf = (time) => {
             this.lenis.raf(time);
-            requestAnimationFrame(raf);
+            this.animationFrameId = requestAnimationFrame(raf);
         };
-        requestAnimationFrame(raf);
+        this.animationFrameId = requestAnimationFrame(raf);
     }
 
     setupNavigationLinks() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => this.handleAnchorClick(e, anchor));
+            anchor.addEventListener('click', this.boundHandleAnchorClick);
         });
     }
 
-    handleAnchorClick(e, anchor) {
+    handleAnchorClick(e) {
         e.preventDefault();
+        const anchor = e.currentTarget;
         const targetId = anchor.getAttribute('href');
 
         if (anchor.classList.contains('view-work-btn')) {
@@ -51,6 +54,11 @@ class SmoothScroll {
     }
 
     handleViewWorkButton() {
+        // Reset counter if it exceeds a reasonable value
+        if (this.viewWorkClickCount >= 2) {
+            this.viewWorkClickCount = 0;
+        }
+        
         this.viewWorkClickCount++;
         const targetElement = this.viewWorkClickCount === 1 ?
             document.querySelector('#skills') :
@@ -69,11 +77,37 @@ class SmoothScroll {
     }
 
     scrollToElement(element) {
-        const headerHeight = document.querySelector('nav').offsetHeight;
+        const headerElement = document.querySelector('nav');
+        if (!headerElement) {
+            console.error('Navigation element not found');
+            return;
+        }
+        
+        const headerHeight = headerElement.offsetHeight;
         this.lenis.scrollTo(element, {
             offset: -headerHeight - 20,
             duration: 1.2
         });
+    }
+    
+    // Cleanup method to prevent memory leaks and stop animation frames
+    cleanup() {
+        // Cancel the animation frame
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+            this.animationFrameId = null;
+        }
+        
+        // Remove event listeners
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.removeEventListener('click', this.boundHandleAnchorClick);
+        });
+        
+        // Destroy Lenis instance if it exists
+        if (this.lenis) {
+            this.lenis.destroy();
+            this.lenis = null;
+        }
     }
 }
 

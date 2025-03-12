@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 class AnimationsManager {
     constructor() {
         gsap.registerPlugin(ScrollTrigger);
+        this.observers = [];
+        this.scrollTriggers = [];
+        this.loadEventListener = null;
         this.init();
     }
 
@@ -26,6 +29,9 @@ class AnimationsManager {
         }, { threshold: 0.5 });
         
         typewriterElements.forEach(element => observer.observe(element));
+        
+        // Store observer for cleanup
+        this.observers.push(observer);
     }
 
     handleTypewriterElement(element) {
@@ -41,9 +47,15 @@ class AnimationsManager {
     }
 
     applyTypewriterEffect(element, text) {
-        element.innerHTML = '';
-        element.classList.add('typing');
+        // Prevent repeated DOM element creation by checking if already typing
+        if (element.classList.contains('typing-in-progress')) {
+            return;
+        }
         
+        element.innerHTML = '';
+        element.classList.add('typing', 'typing-in-progress');
+        
+        // Create cursor element only once
         const cursor = document.createElement('span');
         cursor.className = 'cursor';
         cursor.innerHTML = '|';
@@ -54,21 +66,17 @@ class AnimationsManager {
         
         const typeCharacter = () => {
             if (charIndex < text.length) {
+                // Optimize by updating text content directly instead of recreating DOM elements
                 const currentText = text.substring(0, charIndex + 1);
-                element.innerHTML = '';
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = currentText;
-
-                while (tempDiv.firstChild) {
-                    element.appendChild(tempDiv.firstChild);
-                }
-                if (charIndex < text.length - 1) {
-                    element.appendChild(cursor);
-                }
+                cursor.remove(); // Temporarily remove cursor
+                element.textContent = currentText; // Set text directly
+                element.appendChild(cursor); // Re-add cursor at the end
+                
                 charIndex++;
                 setTimeout(typeCharacter, typeSpeed);
             } else {
                 cursor.remove();
+                element.classList.remove('typing-in-progress');
             }
         };
         
@@ -78,28 +86,44 @@ class AnimationsManager {
     setupScrollAnimations() {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         animatedElements.forEach(element => {
-            ScrollTrigger.create({
+            const trigger = ScrollTrigger.create({
                 trigger: element,
                 start: 'top 80%',
                 onEnter: () => element.classList.add('animated')
             });
+            
+            // Store ScrollTrigger instances for cleanup
+            this.scrollTriggers.push(trigger);
         });
     }
 
     setupPageTransitions() {
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '1';
+        this.loadEventListener = () => {
             document.body.classList.add('page-transition', 'loaded');
-        });
+        };
+        
+        window.addEventListener('load', this.loadEventListener);
     }
 
-    setupInteractiveElements() {
-        const interactiveElements = document.querySelectorAll('a, button');
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                element.style.transition = 'all 0.3s ease';
-            });
+    // Cleanup method to prevent memory leaks
+    cleanup() {
+        // Kill all ScrollTrigger instances
+        this.scrollTriggers.forEach(trigger => {
+            trigger.kill();
         });
+        this.scrollTriggers = [];
+        
+        // Disconnect all IntersectionObserver instances
+        this.observers.forEach(observer => {
+            observer.disconnect();
+        });
+        this.observers = [];
+        
+        // Remove event listeners
+        if (this.loadEventListener) {
+            window.removeEventListener('load', this.loadEventListener);
+            this.loadEventListener = null;
+        }
     }
 }
 

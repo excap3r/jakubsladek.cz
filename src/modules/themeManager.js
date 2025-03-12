@@ -5,6 +5,7 @@ class ThemeManager {
         this.themeToggle = document.getElementById('themeToggle');
         this.lightIcon = this.themeToggle.querySelector('.theme-toggle-light');
         this.darkIcon = this.themeToggle.querySelector('.theme-toggle-dark');
+        this.boundToggleTheme = this.toggleTheme.bind(this);
         
         this.init();
     }
@@ -14,7 +15,10 @@ class ThemeManager {
         this.setInitialTheme();
         
         // Add event listener for theme toggle
-        this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        this.themeToggle.addEventListener('click', this.boundToggleTheme);
+        
+        // Add transition class to document element for CSS-based transitions
+        document.documentElement.classList.add('theme-transition');
     }
 
     setInitialTheme() {
@@ -40,11 +44,15 @@ class ThemeManager {
         this.lightIcon.classList.toggle('hidden');
         this.darkIcon.classList.toggle('hidden');
         
-        // Add smooth transition effect
-        document.documentElement.style.transition = 'background-color 0.3s ease';
-        
         // Dispatch custom event for other components to react to theme change
         document.dispatchEvent(new CustomEvent('themeChanged', { detail: { isDark } }));
+    }
+    
+    // Cleanup method to prevent memory leaks
+    cleanup() {
+        if (this.themeToggle) {
+            this.themeToggle.removeEventListener('click', this.boundToggleTheme);
+        }
     }
 }
 
