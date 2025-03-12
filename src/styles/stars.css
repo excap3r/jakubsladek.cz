@@ -17,18 +17,17 @@
     border-radius: 50%;
     opacity: 0;
     animation: twinkle 5s infinite;
+    will-change: transform, opacity;
 }
 
 .dark .star {
-    box-shadow: 
-        0 0 2px #fff,
-        0 0 4px #fff,
-        0 0 8px #fff;
+    /* Optimized box-shadow with fewer layers and reduced intensity */
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+    0%, 100% { transform: scale(0.8); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 1; }
 }
 
 .meteor {
@@ -38,6 +37,7 @@
     background: linear-gradient(0deg, transparent, #fff);
     opacity: 0;
     animation: shooting 10s infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes shooting {

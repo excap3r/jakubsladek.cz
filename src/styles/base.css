@@ -2,34 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --text-light: #000000;
+    --bg-light: #FFFFFF;
+    --text-dark: #FFFFFF;
+    --bg-dark: #000000;
+}
+
 /* Base styles */
 body {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    /* Removed transform: translateZ(0) as it was creating stacking context issues with the fixed nav */
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     letter-spacing: -0.025em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-display: swap; /* Optimize font loading */
+    /* Removed will-change property to fix nav visibility issues */
 }
 
 body.loaded {
     opacity: 1;
 }
 
-/* Light/dark mode background colors */
+/* Light/dark mode background colors using CSS variables */
 .dark #home {
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
 #contact {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: var(--bg-light);
+    color: var(--text-light);
 }
 
 .dark #contact {
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }

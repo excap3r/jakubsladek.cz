@@ -1,22 +1,33 @@
-/* Rest of the existing animations */
-.animate-fade-in {
+/* Animation variables */
+:root {
+    --fade-duration: 0.5s;
+    --fade-timing: ease-in;
+    --fade-distance: 10px;
+}
+
+/* Consolidated fade-in animations */
+.animate-fade-in,
+.animate-fade-in-delay,
+.animate-fade-in-delay-2 {
     opacity: 0;
-    animation: fadeIn 0.5s ease-in forwards;
+    will-change: transform;
+}
+
+.animate-fade-in {
+    animation: fadeIn var(--fade-duration) var(--fade-timing) forwards;
 }
 
 .animate-fade-in-delay {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in 0.2s forwards;
+    animation: fadeIn var(--fade-duration) var(--fade-timing) 0.2s forwards;
 }
 
 .animate-fade-in-delay-2 {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in 0.4s forwards;
+    animation: fadeIn var(--fade-duration) var(--fade-timing) 0.4s forwards;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { transform: translateY(var(--fade-distance)); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 /* Typewriter effect */
@@ -26,6 +37,7 @@
     position: relative;
     white-space: pre-wrap;
     visibility: hidden;
+    will-change: opacity, visibility;
 }
 
 .typewriter-text.typing {
@@ -37,6 +49,7 @@
     display: inline-block;
     width: 2px;
     animation: blink 0.7s infinite;
+    will-change: opacity;
 }
 
 @keyframes blink {
