@@ -8,8 +8,7 @@
     transition: transform 0.3s ease;
     width: 100%;
     margin: 0;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 2rem 0;
 }
 
 /* CSS Variables for gradients */
@@ -130,4 +129,18 @@
 
 .dark .profile-image:hover {
     filter: brightness(1.15);
+}
+
+#contact .btn-social {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    #contact .btn-social {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
 }

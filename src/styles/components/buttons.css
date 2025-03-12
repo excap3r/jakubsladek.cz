@@ -1,0 +1,42 @@
+/* Button Component Classes */
+
+/* Primary Button */
+.btn-primary {
+  @apply px-6 py-2.5 text-base bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply px-6 py-2.5 text-base bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300;
+}
+
+/* Social Media Buttons */
+.btn-social {
+  @apply inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto;
+}
+
+.btn-email {
+  @apply bg-blue-600 hover:bg-blue-700;
+}
+
+.btn-linkedin {
+  @apply bg-[#0077b5] hover:bg-[#006396];
+}
+
+.btn-github {
+  @apply bg-gray-800 hover:bg-gray-700;
+}
+
+/* Icon within buttons */
+.btn-icon {
+  @apply w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  @apply p-1.5 sm:p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 shadow-lg ml-4;
+}
+
+.theme-toggle-icon {
+  @apply w-5 h-5 sm:w-6 sm:h-6;
+}

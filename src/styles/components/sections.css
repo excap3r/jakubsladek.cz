@@ -1,0 +1,61 @@
+/* Section Component Classes */
+
+/* Base Section */
+.section-base {
+  @apply py-12 sm:py-20 px-4 md:px-8 bg-pure-white dark:bg-pure-black;
+}
+
+/* Section with Extra Padding */
+.section-large {
+  @apply py-16 sm:py-24 px-4 md:px-8 bg-pure-white dark:bg-pure-black;
+}
+
+/* Section Headings */
+.section-heading {
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12 leading-relaxed;
+}
+
+/* Section Container */
+.section-container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Card Components */
+.card-base {
+  @apply bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+/* Skill Tag */
+.skill-tag {
+  @apply px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full;
+}
+
+/* Experience Tag */
+.experience-tag {
+  @apply px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-full;
+}
+
+/* Tag Colors */
+.tag-blue {
+  @apply bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300;
+}
+
+.tag-green {
+  @apply bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300;
+}
+
+.tag-purple {
+  @apply bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300;
+}
+
+.tag-yellow {
+  @apply bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300;
+}
+
+.tag-pink {
+  @apply bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300;
+}
+
+.tag-indigo {
+  @apply bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300;
+}

@@ -3,6 +3,11 @@
 
 /* Import component styles */
 @import './components.css';
+@import './components/buttons.css';
+@import './components/sections.css';
 
 /* Import animation styles */
 @import './animations.css';
+
+/* Import star styles */
+@import './stars.css';
