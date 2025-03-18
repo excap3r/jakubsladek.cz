@@ -12,5 +12,6 @@ export default defineConfig({
         main: './index.html'
       }
     }
-  }
+  },
+  publicDir: 'public' // Files in this directory will be served at root path and copied to dist on build
 })

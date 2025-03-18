@@ -3,6 +3,7 @@ import './styles/stars.css';
 import { initStarField } from './effects/starfield';
 import ThemeManager from './modules/themeManager';
 import AnimationsManager from './modules/animations';
+import SEO from './modules/seo';
 
 // Initialize star field in home section
 const homeSection = document.getElementById('home');
@@ -51,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize animations and interactive elements
     new AnimationsManager();
+    
+    // Initialize SEO functionality
+    new SEO();
 
     // Initial starfield setup
     if (homeSection) {
