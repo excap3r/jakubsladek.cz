@@ -38,10 +38,65 @@
         content="Official website of Jakub Sládek, a Full Stack Developer specializing in Laravel, Next.js, React.js, and PHP development.">
     <meta property="twitter:image" content="https://jakubsladek.cz/src/images/js.webp">
 
-    <!-- Assets -->
-    <link rel="stylesheet" href="/src/styles/main.css">
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Basic critical CSS for initial page render */
+        :root {
+            --pure-white: #ffffff;
+            --pure-black: #000000;
+        }
+        .bg-pure-white {
+            background-color: var(--pure-white);
+        }
+        .dark .bg-pure-black {
+            background-color: var(--pure-black);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        /* Critical navigation styling */
+        .fixed {
+            position: fixed;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .z-50 {
+            z-index: 50;
+        }
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+        .border-b {
+            border-bottom-width: 1px;
+        }
+        .flex {
+            display: flex;
+        }
+        .justify-between {
+            justify-content: space-between;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .text-lg, .text-xl {
+            font-weight: 700;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Assets - Load non-critical CSS asynchronously -->
+    <link rel="preload" href="./src/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./src/styles/main.css"></noscript>
+    
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -79,6 +134,10 @@
 </head>
 
 <body class="bg-pure-white dark:bg-pure-black transition-colors duration-300">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/public/images/profile/js-light-160.webp" as="image">
+    <link rel="preload" href="/public/images/profile/js-dark-160.webp" as="image">
+    
     <div class="min-h-screen">
         <!-- Navigation Bar -->
         <nav
@@ -102,8 +161,8 @@
                     </div>
                     <!-- Theme Toggle Button -->
                     <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-                        <img src="/src/images/icons/sun.svg" alt="" class="theme-toggle-icon text-gray-800 dark:text-yellow-300 theme-toggle-light" aria-hidden="true">
-                        <img src="/src/images/icons/moon.svg" alt="" class="hidden theme-toggle-icon text-gray-800 dark:text-gray-200 theme-toggle-dark" aria-hidden="true">
+                        <img src="./src/images/icons/sun.svg" alt="" class="theme-toggle-icon text-gray-800 dark:text-yellow-300 theme-toggle-light" aria-hidden="true" width="24" height="24" fetchpriority="high">
+                        <img src="./src/images/icons/moon.svg" alt="" class="hidden theme-toggle-icon text-gray-800 dark:text-gray-200 theme-toggle-dark" aria-hidden="true" width="24" height="24" fetchpriority="high">
                     </button>
                 </div>
             </div>
@@ -116,12 +175,18 @@
             </div>
             <div class="relative text-center z-10 max-w-4xl mx-auto py-16 sm:py-20">
                 <div class="mx-auto w-32 h-32 sm:w-40 sm:h-40 mb-8 animate-fade-in">
-                    <img src="./src/images/js-light.webp" alt="Jakub Sládek"
+                    <img src="/public/images/profile/js-light-160.webp" 
+                        srcset="/public/images/profile/js-light-160.webp 160w, /public/images/profile/js-light-320.webp 320w"
+                        sizes="(max-width: 640px) 128px, 160px"
+                        alt="Jakub Sládek"
                         class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800 profile-image dark:hidden"
-                        loading="lazy">
-                    <img src="./src/images/js.webp" alt="Jakub Sládek"
+                        width="160" height="160" fetchpriority="high">
+                    <img src="/public/images/profile/js-dark-160.webp" 
+                        srcset="/public/images/profile/js-dark-160.webp 160w, /public/images/profile/js-dark-320.webp 320w"
+                        sizes="(max-width: 640px) 128px, 160px"
+                        alt="Jakub Sládek"
                         class="w-full h-full object-cover rounded-full shadow-lg border-4 border-white dark:border-gray-800 profile-image hidden dark:block"
-                        loading="lazy">
+                        width="160" height="160" fetchpriority="high">
                 </div>
                 <h1
                     class="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">
@@ -342,7 +407,7 @@
                         <a href="https://github.com/excap3r/jakubsladek.cz" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center text-blue-600 dark:text-blue-400"
                             aria-label="View Portfolio Website project">
-                            View Project <img src="/src/images/icons/arrow-right-light.svg" class="w-4 h-4 ml-2 block dark:hidden" alt="" aria-hidden="true"><img src="/src/images/icons/arrow-right-dark.svg" class="w-4 h-4 ml-2 hidden dark:block" alt="" aria-hidden="true">
+                            View Project <img src="./src/images/icons/arrow-right-light.svg" class="w-4 h-4 ml-2 block dark:hidden" alt="" aria-hidden="true"><img src="./src/images/icons/arrow-right-dark.svg" class="w-4 h-4 ml-2 hidden dark:block" alt="" aria-hidden="true">
                         </a>
                     </div>
                 </article>
@@ -362,15 +427,15 @@
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-12 px-4 sm:px-0">
                     <a href="mailto:connect@jakubsladek.cz" class="btn-social btn-email" aria-label="Email me at connect@jakubsladek.cz">
-                        <img src="/src/images/icons/email.svg" class="btn-icon" alt="" aria-hidden="true">
+                        <img src="./src/images/icons/email.svg" class="btn-icon" alt="" aria-hidden="true">
                         connect@jakubsladek.cz
                     </a>
                     <a href="https://www.linkedin.com/in/jakubsladek" target="_blank" rel="noopener noreferrer" class="btn-social btn-linkedin" aria-label="Visit my LinkedIn profile">
-                        <img src="/src/images/icons/linkedin.svg" class="btn-icon" alt="" aria-hidden="true">
+                        <img src="./src/images/icons/linkedin.svg" class="btn-icon" alt="" aria-hidden="true">
                         LinkedIn
                     </a>
                     <a href="https://github.com/excap3r" target="_blank" rel="noopener noreferrer" class="btn-social btn-github" aria-label="Visit my GitHub profile">
-                        <img src="/src/images/icons/github.svg" class="btn-icon" alt="" aria-hidden="true">
+                        <img src="./src/images/icons/github.svg" class="btn-icon" alt="" aria-hidden="true">
                         GitHub
                     </a>
 
@@ -396,7 +461,8 @@
         </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <!-- Scripts -->
+    <script type="module" src="./src/main.js" defer></script>
 </body>
 
 </html>

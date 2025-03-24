@@ -19,7 +19,6 @@ class SEO {
   initializeStructuredData() {
     // The structured data is already present in the HTML
     // This method ensures the structured data is properly formatted
-    console.log('SEO: Structured data initialized');
     
     // Add additional schema markup for breadcrumbs if on a specific page section
     if (window.location.hash) {
@@ -30,7 +29,6 @@ class SEO {
         const sectionName = sectionElement.querySelector('h2')?.textContent || section;
         
         // Could dynamically add breadcrumb schema here if needed
-        console.log(`SEO: Section detected: ${sectionName}`);
       }
     }
   }
@@ -50,7 +48,7 @@ class SEO {
         }
       }
     } else {
-      console.error('SEO: Canonical link element not found');
+      // Error handling for missing canonical link element
     }
   }
 
@@ -73,16 +71,8 @@ class SEO {
    * Enhance headings with additional name mentions for SEO
    */
   enhanceHeadings() {
-    // Add name to headings where appropriate to increase name mentions
-    const aboutHeading = document.querySelector('#about h2');
-    if (aboutHeading && !aboutHeading.textContent.includes('Jakub')) {
-      aboutHeading.textContent = 'About Jakub Sládek';
-    }
-    
-    const projectsHeading = document.querySelector('#projects h2');
-    if (projectsHeading && !projectsHeading.textContent.includes('Jakub')) {
-      projectsHeading.textContent = 'Jakub Sládek\'s Projects';
-    }
+    // SEO enhancement through meta tags is sufficient
+    // Removing automatic heading text changes to preserve original headings
   }
 
   /**
@@ -107,13 +97,13 @@ class SEO {
             // Update title based on section
             switch(sectionId) {
               case 'about':
-                document.title = 'About Jakub Sládek | Full Stack Developer';
+                document.title = 'About Me | Jakub Sládek | Full Stack Developer';
                 break;
               case 'projects':
-                document.title = 'Jakub Sládek\'s Projects | Full Stack Developer';
+                document.title = 'My Projects | Jakub Sládek | Full Stack Developer';
                 break;
               case 'contact':
-                document.title = 'Contact Jakub Sládek | Full Stack Developer';
+                document.title = 'Contact | Jakub Sládek | Full Stack Developer';
                 break;
               default:
                 document.title = originalTitle;
@@ -130,11 +120,7 @@ class SEO {
    * Logs the current SEO status to the console
    */
   logSEOStatus() {
-    console.log('SEO: Enhanced module initialized');
-    console.log('SEO: Indexing enabled');
-    console.log('SEO: robots.txt and sitemap.xml are configured');
-    console.log('SEO: Name optimization applied');
-    console.log('SEO: Redirect handling active');
+    // All console logs removed for production
   }
 }
 
