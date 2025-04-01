@@ -54,8 +54,14 @@ class SEO {
 
   /**
    * Handle redirects from www to non-www and ensure HTTPS
+   * Skip redirects for local development environments
    */
   handleRedirects() {
+    // Skip redirects for localhost or development environments
+    if (window.location.hostname === 'localhost' || window.location.hostname.includes('localhost')) {
+      return;
+    }
+    
     // Redirect www to non-www
     if (window.location.hostname === 'www.jakubsladek.cz') {
       window.location.href = `https://jakubsladek.cz${window.location.pathname}${window.location.search}${window.location.hash}`;
