@@ -27,23 +27,10 @@
     background-clip: text;
     color: transparent;
     text-shadow: var(--shadow-small);
-    transition: var(--transition-standard);
-    will-change: transform;
-}
-
-#contact h2:hover {
-    transform: translateY(-2px);
-    text-shadow: var(--shadow-medium);
 }
 
 #contact p {
-    transition: var(--transition-standard);
     position: relative;
-    will-change: transform;
-}
-
-#contact p:hover {
-    transform: translateY(-1px);
 }
 
 .dark #contact {

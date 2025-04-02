@@ -5,26 +5,50 @@
   @apply px-6 py-2.5 text-base bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300;
 }
 
+.btn-primary:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
 /* Secondary Button */
 .btn-secondary {
   @apply px-6 py-2.5 text-base bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300;
 }
 
+.btn-secondary:hover {
+  box-shadow: 0 0 15px rgba(156, 163, 175, 0.4);
+}
+
 /* Social Media Buttons */
 .btn-social {
-  @apply inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto;
+  @apply inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white rounded-full transition-all duration-300 w-full sm:w-auto;
+}
+
+.btn-social:hover {
+  filter: brightness(1.05);
 }
 
 .btn-email {
-  @apply bg-blue-600 hover:bg-blue-700;
+  @apply bg-blue-600;
+}
+
+.btn-email:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.btn-linkedin:hover {
+  box-shadow: 0 0 15px rgba(0, 119, 181, 0.5);
+}
+
+.btn-github:hover {
+  box-shadow: 0 0 15px rgba(75, 85, 99, 0.5);
 }
 
 .btn-linkedin {
-  @apply bg-[#0077b5] hover:bg-[#006396];
+  @apply bg-[#0077b5];
 }
 
 .btn-github {
-  @apply bg-gray-800 hover:bg-gray-700;
+  @apply bg-gray-800;
 }
 
 /* Icon within buttons */
@@ -35,6 +59,10 @@
 /* Theme Toggle Button */
 .theme-toggle-btn {
   @apply p-1.5 sm:p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 shadow-lg ml-4;
+}
+
+.theme-toggle-btn:hover {
+  box-shadow: 0 0 12px rgba(156, 163, 175, 0.5);
 }
 
 .theme-toggle-icon {

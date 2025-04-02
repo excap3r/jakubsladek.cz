@@ -59,3 +59,7 @@
 .tag-indigo {
   @apply bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300;
 }
+
+.tag-red {
+  @apply bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300;
+}
