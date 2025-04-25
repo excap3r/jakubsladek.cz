@@ -1,60 +1,21 @@
 import './styles/main.css';
 import './styles/stars.css';
 import ThemeManager from './modules/themeManager';
+import { showStarField, hideStarField } from './effects/starfield.js';
 // SEO is imported dynamically later to improve initial load time
 
 // Initialize theme management early as it's critical for UX
 const themeManager = new ThemeManager();
 
-// Global reference to starField element
-let starField = null;
+// Global reference for animations manager
 let animationsManager = null;
 
-// Lazily import the starfield effect - optimized with smaller loading overhead
-const loadStarField = () => import(
-  /* webpackChunkName: "starfield" */
-  /* webpackPrefetch: true */
-  './effects/starfield.js'
-).then(module => module.initStarField)
- .catch(error => {
-    console.error('Error loading starfield module:', error);
-    return null;
- });
-
 // Function to update starfield visibility based on theme
-async function updateStarField() {
-    const homeSection = document.getElementById('home');
-    
-    // Error handling for DOM element selection
-    if (!homeSection) return;
-    
-    const starContainer = homeSection.querySelector('.absolute.inset-0');
-    if (!starContainer) return;
-    
-    // Toggle visibility instead of recreating elements
+function updateStarFieldVisibility() {
     if (document.documentElement.classList.contains('dark')) {
-        // Create starfield if it doesn't exist yet
-        if (!starField) {
-            // Dynamically import the starfield module only when needed
-            const initStarField = await loadStarField();
-            if (initStarField) {
-                const newStarField = initStarField();
-                if (newStarField) {
-                    starField = newStarField;
-                    starContainer.appendChild(starField);
-                }
-            }
-        } else if (starField.parentNode !== starContainer) {
-            // Re-append if it exists but was removed
-            starContainer.appendChild(starField);
-        }
-        // Make sure it's visible
-        if (starField) {
-            starField.style.display = 'block';
-        }
-    } else if (starField) {
-        // Hide starfield in light mode instead of removing
-        starField.style.display = 'none';
+        showStarField();
+    } else {
+        hideStarField();
     }
 }
 
@@ -114,12 +75,10 @@ if (document.readyState === 'loading') {
 
 function onDocumentReady() {
     // Initial starfield setup (important for dark mode)
-    if (document.documentElement.classList.contains('dark')) {
-        updateStarField();
-    }
+    updateStarFieldVisibility(); // Call initially to show/hide based on current theme
     
     // Listen for theme changes
-    document.addEventListener('themeChanged', updateStarField);
+    document.addEventListener('themeChanged', updateStarFieldVisibility);
     
     // Initialize non-critical features when browser is idle
     initializeWhenIdle();

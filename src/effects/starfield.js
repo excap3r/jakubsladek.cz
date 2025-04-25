@@ -1,11 +1,10 @@
-function initStarField() {
-    // Only create starfield if in dark mode
-    if (!document.documentElement.classList.contains('dark')) {
-        return null;
-    }
+let starFieldElement = null;
+let starContainer = null;
 
-    const starField = document.createElement('div');
-    starField.classList.add('star-field');
+function createStarFieldElement() {
+    const element = document.createElement('div');
+    element.classList.add('star-field');
+    element.style.display = 'none'; // Initially hidden
 
     // Pre-calculate random values for better performance
     const randomPositions = Array.from({ length: 100 }, () => ({
@@ -21,7 +20,7 @@ function initStarField() {
         star.style.top = `${position.top}%`;
         star.style.left = `${position.left}%`;
         star.style.animationDelay = `${position.delay}s`;
-        starField.appendChild(star);
+        element.appendChild(star);
     });
 
     // Pre-calculate random values for meteors
@@ -38,10 +37,48 @@ function initStarField() {
         meteor.style.top = `${position.top}%`;
         meteor.style.left = `${position.left}%`;
         meteor.style.animationDelay = `${position.delay}s`;
-        starField.appendChild(meteor);
+        element.appendChild(meteor);
     });
 
-    return starField;
+    return element;
 }
 
-export { initStarField };
+function ensureStarFieldExists(containerSelector = '#home .absolute.inset-0') {
+    if (!starFieldElement) {
+        starContainer = document.querySelector(containerSelector);
+        if (starContainer) {
+            starFieldElement = createStarFieldElement();
+            starContainer.appendChild(starFieldElement);
+        } else {
+            console.error('Starfield container not found:', containerSelector);
+        }
+    }
+    // Ensure it's appended if it was somehow removed but still exists
+    else if (starContainer && starFieldElement.parentNode !== starContainer) {
+         starContainer.appendChild(starFieldElement);
+    }
+}
+
+function showStarField() {
+    ensureStarFieldExists();
+    if (starFieldElement) {
+        starFieldElement.style.display = 'block';
+    }
+}
+
+function hideStarField() {
+    if (starFieldElement) {
+        starFieldElement.style.display = 'none';
+    }
+}
+
+// Optional: Function to completely remove the starfield if needed
+function removeStarField() {
+    if (starFieldElement && starFieldElement.parentNode) {
+        starFieldElement.parentNode.removeChild(starFieldElement);
+        starFieldElement = null;
+        starContainer = null;
+    }
+}
+
+export { showStarField, hideStarField, removeStarField };
